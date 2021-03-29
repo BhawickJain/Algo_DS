@@ -1,0 +1,66 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.11.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+### Sequential Search Example
+
+Sequential (aka Linear) search is where you iterate through a list of items in sequence until you find or not find the position of the target.
+
+```{python}
+def seq_search(list, target):
+    """
+    Returns the index position of the target if found, else returns None
+    """
+    for i in range(0, len(list)):
+        if list[i] == target:
+            return i
+    return None
+```
+
+### Small List
+
+```{python}
+listA = [x for x in range(0,10)] # range of 0 to 9
+five_pos = seq_search(listA, 5)
+```
+
+```{python}
+listA[five_pos]
+```
+
+### Target doesn't exist
+
+```{python}
+None_pos = seq_search(listA, 11)
+None_pos == None
+```
+
+### Big number
+
+```{python}
+size = 100000000
+listB = [x for x in range(0, size)]
+```
+
+```{python}
+mil_pos = seq_search(listB, size-1)
+```
+
+```{python}
+listB[mil_pos], size-1
+```
+
+`[ ]` Define a function that measures time taken for the algorithm to complete.  
+`[ ]` Create a range of sizes and plot to visually show of O(n).  
+`[ ]` Deduce why linear is to be expected.
