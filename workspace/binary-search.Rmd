@@ -79,7 +79,7 @@ def rec_bin_search(list, target):
     
     lower = 0
     upper = len(list)-1
-    print("F", "L", "M", "C", "M")
+    print("L", "U", "M", "C", "T") ## C for current value at midpoint
     pos = eval_mid(lower, upper, list, target)
     return pos
     
@@ -89,44 +89,47 @@ def rec_bin_search(list, target):
 pos = rec_bin_search(listA, 5)
 ```
 
+One of the big assumptions is that the list must be sorted in ascending order.   
+`[ ]` Is there way to check that without running a full sort algorithm? 
+
+
+The version of recursion resizes the original list and calls the function again. What is lost are the upper and lower bounds relative to the original list, but otherwise it appears neater.
+
 ```{python}
-pos
-```
+def rec2_bin_search(list, target, debug=False):
 
-tightened version
+    midpoint = (0 + len(list)-1)//2
+    
+    if debug == True:
+        print(list)
 
-```{python}
-def eval_mid(lower, upper, list, target):
-
-    midpoint = (lower + upper)//2
-
-    print(lower, upper, midpoint, list[midpoint], target)
-
-    if list[midpoint] == target:
+    if 0 > midpoint:
+        if debug == True:
+            print('None')
+        return None    
+    
+    elif list[midpoint] == target:
+        if debug == True:
+            print(f'[{list[midpoint]}]') 
         return midpoint
 
     elif list[midpoint] > target:
-        return eval_mid(lower, midpoint - 1, list, target)
+        return rec2_bin_search(list[:midpoint], target, debug)
 
     elif list[midpoint] < target:
-        return eval_mid(midpoint + 1, upper, list, target)
-
-    elif lower > upper:
-        return None
-
-def rec_bin_search(list, target):
-    
-    lower = 0
-    upper = len(list)-1
-    pos = eval_mid(lower, upper, list, target)
-    return pos
-    
+        return rec2_bin_search(list[midpoint+1:], target, debug)
 ```
 
 ```{python}
-pos = rec_bin_search(listA, 5)
+pos = rec2_bin_search(listA, 100, debug=True)
 ```
 
-`[ ]` One of the big assumptions is that the list must be sorted in ascending order. Is there way to check that without running a full sort algorithm?  
 `[ ]` Is a function call expensive?  
 `[ ]` Is there a cost to making binary search resursive?  
+
+syntax sugar: `midpoint+1:` instead of `midpoint+1:len(list)-1`  
+syntax sugar: `:midpoint` instead of `:midpoint`
+
+```{python}
+
+```
