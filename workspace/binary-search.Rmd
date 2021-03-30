@@ -138,12 +138,20 @@ When line 8 is enabled, before the evaluation of these statements the list is em
 
 
 `[ ]` Is a function call expensive?  
-`[ ]` Is there a cost to making binary search resursive?  
+`[ ]` Is there a cost to making binary search resursive?
 
 
 __Why use recursion over a while loops?__
 The recursive version helps highlight the logarithmic aspect of the function as the function clearly calls itself with a list half the size until there nothing left.  
-Another reason could be that unlike a while loop, you are managing the space taken by the evaluation through its call stack. When the recursion yields, each call returns a value and the rest of the function is discarded.
+Another reason could be that unlike a while loop, you are managing the space taken by the evaluation through its call stack. When the recursion yields, each call returns a value and the rest of the function is discarded.  
+Older textbooks and works that were usually written by mathematicians tended to write their program using the functional paradigm. This resulted in them favouring the recursive format.  
+Python does not however optimise recursion well. In fact python has a maximum recursion depth of up to 999 [as explained in a StackOverflow Q&A](https://stackoverflow.com/questions/3323001/what-is-the-maximum-recursion-depth-in-python-and-how-to-increase-it). So for python an iterative implementation is preferred.  
+However, a other languages, especially functional languages are fine or works better with the recursive version.
+
+__Space Complexity considerations__  
+The iterative version's space complexity constant, i.e. O(1). This is as the size of the algorithm for a given problem does not grow as it completes the task. This is in contrast to the recursive version.  
+The recursive version create a new sub-list and calculates the midpoint, which means it grows during a problems execution. In fact, the larger the list the high number of calls to break that list down by 2, all the way to 1 item list. It follows the $log_2(n)$ format, making its Space Complexity to be $O(log_2(n))$.  
+The caveat however is that this depends on the language as it may provide affordances where such a cost may not occur. This kind of optimisation is called [Tail Optimisation](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization). Python does not implement tail call optimisation.
 
 
 __TODO-extension__  
@@ -151,4 +159,8 @@ __TODO-extension__
 `[ ]` Try out a list of strings instead?  
 `[ ]` Can it work with lists of different types?  
 `[ ]` Can you write a generic for binary search?  
-`[ ]` Use gh issues to track gotcha's and create a program that gets the problem and fix of each issue.  
+`[ ]` Use gh issues to track gotcha's.  
+`[ ]` Create a program that gets the problem and fix of each issue.  
+`[ ]` Find out if C++ and JavaScript have any recursion limits.  
+`[ ]` Find out what tail optimisation is and its use in various languages.  
+`[ ]` Find out a way to measure the time and space taken by an algorithm.
