@@ -15,21 +15,25 @@ jupyter:
 
 ### Binary Search
 
+Binary Search takes a list sorted in ascending order and a target value. Taking the Upper and Lower index bounds (e.g. len(list)-1 and 0) and finds floored midpoint index. It checks that midpoint position value from the list with the target value. If the midpoint value is too large, the Upper bound is set as the midpoint - 1 and if too small, the Lower bound is set as midpoint + 1. 
+
+The search stops until the list(midpoint) == target or the lower bound is no longer Lower <= Upper
+
 ```{python}
 def bin_search(list, target):
-    first = 0
-    last = len(list)-1
+    lower = 0
+    upper = len(list)-1
     
-    while first <= last:
-        midpoint = (first + last)//2
-        print(first, last, midpoint, target)
+    while lower <= upper:
+        midpoint = (lower + upper)//2
+        print(lower, upper, midpoint, target)
         
         if list[midpoint] == target:
             return midpoint
         elif list[midpoint] > target:
-            last = midpoint - 1
+            upper = midpoint - 1
         else:
-            first = midpoint + 1
+            lower = midpoint + 1
             
     return None
 ```
@@ -49,32 +53,34 @@ pos
 I wonder if there is a recursive version of this.
 
 ```{python}
-def eval_mid(first, last, list, target):
+def eval_mid(lower, upper, list, target):
 
-    midpoint = (first + last)//2
+    midpoint = (lower + upper)//2
 
-    print(first, last, midpoint, list[midpoint], target)
+    print(lower, upper, midpoint, list[midpoint], target)
+    
+    if lower > upper:
+        return None
 
-    if list[midpoint] == target:
+    elif list[midpoint] == target:
         return midpoint
 
     elif list[midpoint] > target:
-        last = midpoint - 1
-        return eval_mid(first, last, list, target)
+        upper = midpoint - 1
+        return eval_mid(lower, upper, list, target)
 
     elif list[midpoint] < target:
-        first = midpoint + 1
-        return eval_mid(first, last, list, target)
+        lower = midpoint + 1
+        return eval_mid(lower, upper, list, target)
 
-    elif first > last:
-        return None
+
 
 def rec_bin_search(list, target):
     
-    first = 0
-    last = len(list)-1
+    lower = 0
+    upper = len(list)-1
     print("F", "L", "M", "C", "M")
-    pos = eval_mid(first, last, list, target)
+    pos = eval_mid(lower, upper, list, target)
     return pos
     
 ```
@@ -90,29 +96,29 @@ pos
 tightened version
 
 ```{python}
-def eval_mid(first, last, list, target):
+def eval_mid(lower, upper, list, target):
 
-    midpoint = (first + last)//2
+    midpoint = (lower + upper)//2
 
-    print(first, last, midpoint, list[midpoint], target)
+    print(lower, upper, midpoint, list[midpoint], target)
 
     if list[midpoint] == target:
         return midpoint
 
     elif list[midpoint] > target:
-        return eval_mid(first, midpoint - 1, list, target)
+        return eval_mid(lower, midpoint - 1, list, target)
 
     elif list[midpoint] < target:
-        return eval_mid(midpoint + 1, last, list, target)
+        return eval_mid(midpoint + 1, upper, list, target)
 
-    elif first > last:
+    elif lower > upper:
         return None
 
 def rec_bin_search(list, target):
     
-    first = 0
-    last = len(list)-1
-    pos = eval_mid(first, last, list, target)
+    lower = 0
+    upper = len(list)-1
+    pos = eval_mid(lower, upper, list, target)
     return pos
     
 ```
@@ -121,4 +127,6 @@ def rec_bin_search(list, target):
 pos = rec_bin_search(listA, 5)
 ```
 
-`[ ]` One of the big assumptions is that the list must be sorted in ascending order. Is there way to check that without running a full sort algorithm?
+`[ ]` One of the big assumptions is that the list must be sorted in ascending order. Is there way to check that without running a full sort algorithm?  
+`[ ]` Is a function call expensive?  
+`[ ]` Is there a cost to making binary search resursive?  
