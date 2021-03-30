@@ -124,11 +124,25 @@ def rec2_bin_search(list, target, debug=False):
 pos = rec2_bin_search(listA, 100, debug=True)
 ```
 
+__Why does this code work?__
+Disabling the `0 > midpoint` check at line 8 leads to the following statements to evaluate an empty list leading to an index error:
+
+line 19: `return rec2_bin_search(list[:midpoint], target, debug)`  
+line 20: `return rec2_bin_search(list[midpoint+1:], target, debug)` 
+
+When line 8 is enabled, before the evaluation of these statements the list is empty, which line 8 detects and returns `None` for.
+
+
 `[ ]` Is a function call expensive?  
 `[ ]` Is there a cost to making binary search resursive?  
 
 syntax sugar: `midpoint+1:` instead of `midpoint+1:len(list)-1`  
 syntax sugar: `:midpoint` instead of `:midpoint`
+
+
+__TODO-extension__  
+`[ ]` You forgot to return recursive statements, raise an issue and then fix it.  
+`[ ]` Use gh issues to track gotcha's and create a program that gets the problem and fix of each issue.  
 
 ```{python}
 
