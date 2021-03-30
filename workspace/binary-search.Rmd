@@ -120,6 +120,10 @@ def rec2_bin_search(list, target, debug=False):
         return rec2_bin_search(list[midpoint+1:], target, debug)
 ```
 
+_notes_  
+syntax sugar: `midpoint+1:` instead of `midpoint+1:len(list)-1`  
+syntax sugar: `:midpoint` instead of `:midpoint`
+
 ```{python}
 pos = rec2_bin_search(listA, 100, debug=True)
 ```
@@ -136,14 +140,15 @@ When line 8 is enabled, before the evaluation of these statements the list is em
 `[ ]` Is a function call expensive?  
 `[ ]` Is there a cost to making binary search resursive?  
 
-syntax sugar: `midpoint+1:` instead of `midpoint+1:len(list)-1`  
-syntax sugar: `:midpoint` instead of `:midpoint`
+
+__Why use recursion over a while loop?__
+The recursive version helps highlight the logarithmic aspect of the function as the function clearly calls itself with a list half the size until there nothing left.  
+Another reason could be that unlike a while loop, you are managing the space taken by the evaluation through its call stack. When the recursion yields, each call returns a value and the rest of the function is discarded.
 
 
 __TODO-extension__  
 `[ ]` You forgot to return recursive statements, raise an issue and then fix it.  
+`[ ]` Try out a list of strings instead?  
+`[ ]` Can it work with lists of different types?  
+`[ ]` Can you write a generic for binary search?  
 `[ ]` Use gh issues to track gotcha's and create a program that gets the problem and fix of each issue.  
-
-```{python}
-
-```
