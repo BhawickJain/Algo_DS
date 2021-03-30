@@ -1,0 +1,124 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.11.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+### Binary Search
+
+```{python}
+def bin_search(list, target):
+    first = 0
+    last = len(list)-1
+    
+    while first <= last:
+        midpoint = (first + last)//2
+        print(first, last, midpoint, target)
+        
+        if list[midpoint] == target:
+            return midpoint
+        elif list[midpoint] > target:
+            last = midpoint - 1
+        else:
+            first = midpoint + 1
+            
+    return None
+```
+
+```{python}
+listA = [x for x in range(5,10)]
+```
+
+```{python}
+pos = bin_search(listA, 2)
+```
+
+```{python}
+pos
+```
+
+I wonder if there is a recursive version of this.
+
+```{python}
+def eval_mid(first, last, list, target):
+
+    midpoint = (first + last)//2
+
+    print(first, last, midpoint, list[midpoint], target)
+
+    if list[midpoint] == target:
+        return midpoint
+
+    elif list[midpoint] > target:
+        last = midpoint - 1
+        return eval_mid(first, last, list, target)
+
+    elif list[midpoint] < target:
+        first = midpoint + 1
+        return eval_mid(first, last, list, target)
+
+    elif first > last:
+        return None
+
+def rec_bin_search(list, target):
+    
+    first = 0
+    last = len(list)-1
+    print("F", "L", "M", "C", "M")
+    pos = eval_mid(first, last, list, target)
+    return pos
+    
+```
+
+```{python}
+pos = rec_bin_search(listA, 5)
+```
+
+```{python}
+pos
+```
+
+tightened version
+
+```{python}
+def eval_mid(first, last, list, target):
+
+    midpoint = (first + last)//2
+
+    print(first, last, midpoint, list[midpoint], target)
+
+    if list[midpoint] == target:
+        return midpoint
+
+    elif list[midpoint] > target:
+        return eval_mid(first, midpoint - 1, list, target)
+
+    elif list[midpoint] < target:
+        return eval_mid(midpoint + 1, last, list, target)
+
+    elif first > last:
+        return None
+
+def rec_bin_search(list, target):
+    
+    first = 0
+    last = len(list)-1
+    pos = eval_mid(first, last, list, target)
+    return pos
+    
+```
+
+```{python}
+pos = rec_bin_search(listA, 5)
+```
+
+`[ ]` One of the big assumptions is that the list must be sorted in ascending order. Is there way to check that without running a full sort algorithm?
