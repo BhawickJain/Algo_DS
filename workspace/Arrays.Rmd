@@ -42,3 +42,13 @@ So when ask the array to point to an index, the method will form the memory addr
 ```{python}
 new_list[5] ## index out of range
 ```
+
+#### Operations on the Array
+
+So far adding, intialising and retrieving items from an array has been shown. Let's try searching an array, which the demo will show is a far more expensive operation to perform, particularly in Python due to its pointers.
+
+The following shows the use of the `in` operator to check if `new_list` contains 1. It calls a `contains` method which performs a linear search through the array to true if the item value exists. Even the acess and read operations are constant time, they still need to be performed as they there are items in the array, leading to a linear runtime $O(n)$.
+
+```{python}
+1 in new_list
+```
