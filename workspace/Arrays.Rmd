@@ -82,6 +82,37 @@ Now the length of the array and the size in memory match. Now when appending ano
 numbers.append(200)
 ```
 
-```{python}
+When adding an item on index 1, Python resizes the list to have a memory of allocation of 4 items. This means Python does not need to perform a resizing operation each time a new item is inserted, only at specific points. Those specific points are at index: 0, 4, 8, 16, 25, 35, 46...
 
+It may be argued that this means that appending an items is a non-consant space complexity. But it turns out that if you average the increases in space, it has a '[constant ammortized](https://stackoverflow.com/questions/200384/constant-amortized-time) space complexity'. That is on, average with no concern about the best and worse case, you'll generally have a constant space operation. With the memory allocation resizing it is easy to see why. More and more allocation is performed, and given the additions do not match that rate, less resizing will be required as the list grows.
+
+This is true for the insert operation too, which may have a time complexity of $O(n)$ but an ammortised space complexity of $O(1)$.
+
+
+__Extend Operation__  
+Languages generally offer a means to join two arrays together. In Python is done with the `.extend([])` operation.
+
+```{python}
+numbers = []
+numbers.extend([4, 5, 6])
+numbers
+```
+
+The extend method effective makes a series of append calls to the other elements which has k items. This means this operation has a big O of $O(k)$.
+
+
+__Delete Operation__  
+When you delete an item at an index, the method for delete needs to remove that item and reenforce the contigious index. So in an opposing fashion to append and insert, items to the right of the delete items are shifted to by an index of -1. In addition, resizing is also handled, similar to append and insert operations.  
+Given what we know from earlier, this means that operation has a time complexity of $O(n)$.
+
+```{python}
+del numbers[0]
+numbers
+```
+
+You also have a `.remove(item)` operation which searches and then deletes the item with `del`. Since searching is $O(n)$ and `del` is $O(n)$, this is a $O(n)$ runtime operation with a $O(1)$ space complexity [[codebot-list-remove]](https://thecodingbot.com/pythons-list-remove-time-and-space-complexity-analysis/).
+
+```{python}
+numbers.remove(5)
+numbers
 ```
