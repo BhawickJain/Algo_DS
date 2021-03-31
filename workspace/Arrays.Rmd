@@ -52,3 +52,36 @@ The following shows the use of the `in` operator to check if `new_list` contains
 ```{python}
 1 in new_list
 ```
+
+__Inserting Items in an Array__  
+True insert involves adding an item to a specified in an array, causing the rest of the items on the right to shift an index of + 1. This there for a linear runtime operation when considering adding a new value at index 0.
+
+
+__Appending Items in an Array__  
+This is a special case of insert, where the new item is added at end of an array, i.e. `array[len(array)] = "new_item"`. This is a constant time operation as jumping to the end of array is constant time and so it adding an item. There is no overhead of considering the rest of the items in an array.  
+One caveat is that append's runtime complexity can be different for other languages because of its implementation.
+
+
+When defining an empty list, Python allocates a 1 items array in memory. But inspite of that, when calling its length, it return 0. Indicating that Python is considering more than the memory allocation of the list to determine the length.
+
+```{python}
+numbers = []
+len(numbers)
+```
+
+Lets append an item:
+
+```{python}
+numbers.append(2)
+len(numbers)
+```
+
+Now the length of the array and the size in memory match. Now when appending another item, python must call a list resizing operation in order to increase the memory allocation of the list. There is a lot of ingenuity in its implementation.
+
+```{python}
+numbers.append(200)
+```
+
+```{python}
+
+```
