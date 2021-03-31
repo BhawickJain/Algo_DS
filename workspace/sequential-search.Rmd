@@ -31,7 +31,7 @@ def seq_search(list, target):
 ### Small List
 
 ```{python}
-listA = [x for x in range(0,10)] # range of 0 to 9
+listA = list(range(0,10)) # range of 0 to 9
 five_pos = seq_search(listA, 5)
 ```
 
