@@ -13,7 +13,8 @@ jupyter:
     name: python3
 ---
 
-### Arrays
+## Arrays
+
 
 In python Arrays are called lists. Arrays are contiguous memory data structure, which means each item is placed next to eachother in memory. When accessing the array, an index is used which refers to the target memory as: `index 0 address` + `size of item type` + `index`.  
 This allows the arrays methods to jump to the target items without having to consider all the items in the array. This leads to the access of items in arrays to be a constant time $O(1)$ operation.  
@@ -23,7 +24,7 @@ new_list = [1,2,3]
 new_list[0]
 ```
 
-Arrays must enforce the contigous memory allocation, infact you can only add new items to an array using the `.append` method [[nkmk-lists]](https://note.nkmk.me/en/python-list-append-extend-insert).
+Arrays must enforce the contigous memory allocation, infact you can only add new items to an array using the `.append` method [[nkmk-lists](https://note.nkmk.me/en/python-list-append-extend-insert)].
 
 ```{python}
 new_list.append(4)
@@ -40,7 +41,7 @@ new_list
 So when ask the array to point to an index, the method will form the memory address and get the item in that address. But since that those bytes of memory are not part of the array type, it fails to read them.
 
 ```{python}
-new_list[5] ## index out of range
+# new_list[5] ## index out of range
 ```
 
 #### Operations on the Array
@@ -84,7 +85,7 @@ numbers.append(200)
 
 When adding an item on index 1, Python resizes the list to have a memory of allocation of 4 items. This means Python does not need to perform a resizing operation each time a new item is inserted, only at specific points. Those specific points are at index: 0, 4, 8, 16, 25, 35, 46...
 
-It may be argued that this means that appending an items is a non-consant space complexity. But it turns out that if you average the increases in space, it has a '[constant ammortized](https://stackoverflow.com/questions/200384/constant-amortized-time) space complexity'. That is on, average with no concern about the best and worse case, you'll generally have a constant space operation. With the memory allocation resizing it is easy to see why. More and more allocation is performed, and given the additions do not match that rate, less resizing will be required as the list grows.
+It may be argued that this means that appending an items is a non-consant space complexity. But it turns out that if you average the increases in space, it has a [constant ammortized](https://stackoverflow.com/questions/200384/constant-amortized-time) space complexity. That is on, average with no concern about the best and worse case, you'll generally have a constant space operation. With the memory allocation resizing it is easy to see why. More and more allocation is performed, and given the additions do not match that rate, less resizing will be required as the list grows.
 
 This is true for the insert operation too, which may have a time complexity of $O(n)$ but an ammortised space complexity of $O(1)$.
 
@@ -110,7 +111,7 @@ del numbers[0]
 numbers
 ```
 
-You also have a `.remove(item)` operation which searches and then deletes the item with `del`. Since searching is $O(n)$ and `del` is $O(n)$, this is a $O(n)$ runtime operation with a $O(1)$ space complexity [[codebot-list-remove]](https://thecodingbot.com/pythons-list-remove-time-and-space-complexity-analysis/).
+You also have a `.remove(item)` operation which searches and then deletes the item with `del`. Since searching is $O(n)$ and `del` is $O(n)$, this is a $O(n)$ runtime operation with a $O(1)$ space complexity [[codebot-list-remove](https://thecodingbot.com/pythons-list-remove-time-and-space-complexity-analysis/)].
 
 ```{python}
 numbers.remove(5)
