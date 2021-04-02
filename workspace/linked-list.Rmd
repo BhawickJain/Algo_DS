@@ -96,7 +96,13 @@ class LinkedList:
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
-`[ ]` Why does the above code work, inspite not explicit reasoning around pointers?  
+`[ ]` Why does the above code work, inspite not explicit reasoning around pointers?
+
+__Convenience Method__  
+
+A convenience method is a method are affordances a data structure can provide that do not add functionality to the data structure per se, but instead give methods for the usual thing you would do. This ensures you don't have to recreate a method and assures you can focus on the code that specifically bring the functionality you're concerned with. It allows the author of the data structure to write the most efficient and convenient version.
+
+In the `LinkedList` Class, I have provided `size` and `to_array` methods which one can implement themselves but why make 'em do it is common?
 
 ```{python}
 N1 = Node(10)
@@ -127,16 +133,26 @@ You can add loads of items with a range to the linked list! Lets give the .size(
 for x in range(1,10):
     L1.add(x)
 
-L1.size()
+# L1.size()
+# 11
 ```
 
 Notice how when having brackets at end of `size` tells python it is method not a variable in the object. Much like you access `L1.head` to get data but `L1.head()` gives you uncallable type error.
 
 ```{python}
-L1.head()
+# L1.head()
 
+# ---------------------------------------------------------------------------
+# TypeError                                 Traceback (most recent call last)
+# <ipython-input-109-ccb65b2c2cd9> in <module>
+# ----> 1 L1.head()
+
+# TypeError: 'Node' object is not callable
 ```
 
+Lets try use the `.to_array` method.
+
 ```{python}
-L1.to_array()
+# L1.to_array()
+# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
