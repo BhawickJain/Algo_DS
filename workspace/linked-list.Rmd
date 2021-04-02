@@ -181,10 +181,18 @@ Lets try use the `.to_array` method.
 # [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
+The `.prepend` function in a linked list needs to parse all the way to the tail node. Of course I could create a feature that allows the tail node to be recorded and take advantage of that.  
+
+`[ ] ` Create a `.tail` attribute which records the tail node.  
+`[?] ` What impact does having the `.tail` attribute have to the rest of the functions?  
+`[?] ` How does the Big O change for the function with / without the `.tail` attribute?
+
 ```{python}
 L1.append(100)
 # [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
+
+The `.prepend` function simply swaps the `head` attritbute with a new node and ensure the old head is recorded to the new head's `.next_node` attribute. No shifting of indexes is required.
 
 ```{python}
 L1.prepend(100) # debug=True
@@ -199,4 +207,11 @@ L1.prepend(100) # debug=True
 `[ ]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.  
 `[v]` Modify the `.insert` method so that data is added _after_ a node with a given value.  
 `[v]` Modify the `.insert` method give an option to add _before_ a node with a given value.  
-`[ ]` Reason the Big O values for the `.append`, `.prepend` and `.insert` functions.
+`[ ]` Reason the Big O values for the `.append`, `.prepend` and `.insert` functions.  
+
+`[ ]` Create a `.delete` method to delete at `head`.  <br>
+`[ ]` Create a `.delete` method to delete at `tail`.  <br>
+`[ ]` Create a `.delete` method to delete at an index(th) node.  <br> 
+
+`[?]` How does Complexity of the `.delete` method compare with the array in python?  
+`[?]` Given that Python Arrys uses Pointers anyway, how large of a space-time complexity difference would you expectin languages like C, Swift or Java which don't do that?  
