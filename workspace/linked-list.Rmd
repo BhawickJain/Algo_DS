@@ -95,7 +95,7 @@ class LinkedList:
         return array
 ```
 
-`[ ]` How do you substitute two variables in a string using `%`? fix `line 14`  
+`[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
 `[ ]` Why does the above code work, inspite not explicit reasoning around pointers?  
 
 ```{python}
@@ -119,11 +119,22 @@ Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `
 L1 = LinkedList()
 L1.add(10)
 L1.add(20)
+```
 
+You can add loads of items with a range to the linked list! Lets give the .size() method a try.
+
+```{python}
 for x in range(1,10):
     L1.add(x)
 
 L1.size()
+```
+
+Notice how when having brackets at end of `size` tells python it is method not a variable in the object. Much like you access `L1.head` to get data but `L1.head()` gives you uncallable type error.
+
+```{python}
+L1.head()
+
 ```
 
 ```{python}
