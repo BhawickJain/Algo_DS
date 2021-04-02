@@ -55,18 +55,32 @@ class LinkedList:
     def is_empty(self):
         return self.head == None
     
-    def add(self, data):
-        if self.head == None:
+    def append(self, data):
+        """
+        Creates a new node with Data at the tail node
+        This new node then becomes the Tail Node
+        """
+#         current = self.head
+        
+        if current == None:
             self.head = Node(data)
         else:
             current = self.head
             while current.next_node:
                 current = current.next_node
-            
+
             current.next_node = Node(data)
+            
+    def prepend(self, data):
+        """
+        Creates a new head node with the target data
+        ans sets the previous head to .next_node to current head
+        """
+        self.head.next_node = self.head
+        self.head.data = data
                         
     def __repr__(self):
-    return (f"<Linked List> {self.head}")
+        return (f"<Linked List> {self.head}")
     
     # convenience method
     def size(self):
@@ -123,15 +137,19 @@ Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `
 
 ```{python}
 L1 = LinkedList()
-L1.add(10)
-L1.add(20)
+L1.append(10)
+L1.append(20)
+```
+
+```{python}
+L1
 ```
 
 You can add loads of items with a range to the linked list! Lets give the .size() method a try.
 
 ```{python}
 for x in range(1,10):
-    L1.add(x)
+    L1.append(x)
 
 # L1.size()
 # 11
@@ -153,6 +171,22 @@ Notice how when having brackets at end of `size` tells python it is method not a
 Lets try use the `.to_array` method.
 
 ```{python}
-# L1.to_array()
+L1.to_array()
 # [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+```{python}
+L1.append(100)
+```
+
+```{python}
+L1.to_array()
+```
+
+```{python}
+L1.prepend(100)
+```
+
+```{python}
+
 ```
