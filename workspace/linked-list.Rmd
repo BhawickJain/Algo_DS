@@ -53,6 +53,9 @@ class LinkedList:
         self.head = None
         
     def is_empty(self):
+        """
+        return True is self.head == None is true
+        """
         return self.head == None
     
     def append(self, data):
@@ -102,6 +105,10 @@ class LinkedList:
     
     # convenience method
     def to_array(self):
+        """
+        takes a LinkedList Object and constructs an 
+        array of data attributes for each node
+        """
         current = self.head
         array = []
         
@@ -189,14 +196,7 @@ L1.prepend(100) # debug=True
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
-```{python}
-L1
-```
-
-```{python}
-
-```
-
-```{python}
-
-```
+`[ ]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.  
+`[v]` Modify the `.insert` method so that data is added _after_ a node with a given value.  
+`[v]` Modify the `.insert` method give an option to add _before_ a node with a given value.  
+`[ ]` Reason the Big O values for the `.append`, `.prepend` and `.insert` functions.
