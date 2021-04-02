@@ -83,12 +83,12 @@ class LinkedList:
         if debug==True: print(f"next_node: \t {self.head.next_node}")
                         
     def __repr__(self):
-        return (f"<Linked List> {self.head}")
+        return (f"<Linked List> \t{self.head} \ncount: {self.size()}")
     
     # convenience method
     def size(self):
         """ 
-        Returns the number of nodes in teh list
+        Returns the number of nodes in the list
         Takes O(n) time
         """
         current = self.head
@@ -187,6 +187,14 @@ L1.prepend(100) # debug=True
 # next_node: 	 <Node data: 10>
 
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+```
+
+```{python}
+L1
+```
+
+```{python}
+
 ```
 
 ```{python}
