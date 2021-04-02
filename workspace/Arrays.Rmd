@@ -16,7 +16,7 @@ jupyter:
 ## Arrays
 
 
-In python Arrays are called lists. Arrays are contiguous memory data structure, which means each item is placed next to eachother in memory. When accessing the array, an index is used which refers to the target memory as: `index 0 address` + `size of item type` + `index`.  
+In python Arrays are called lists. Arrays are contiguous memory data structure, which means each item is placed next to each other in memory. When accessing the array, an index is used which refers to the target memory as: `index 0 address` + `size of item type` + `index`.  
 This allows the arrays methods to jump to the target items without having to consider all the items in the array. This leads to the access of items in arrays to be a constant time $O(1)$ operation.  
 
 ```{python}
