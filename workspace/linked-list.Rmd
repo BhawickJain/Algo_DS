@@ -204,6 +204,7 @@ L1.prepend(100) # debug=True
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
+<!-- #region -->
 `[ ]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.  
 `[v]` Modify the `.insert` method so that data is added _after_ a node with a given value.  
 `[v]` Modify the `.insert` method give an option to add _before_ a node with a given value.  
@@ -215,3 +216,9 @@ L1.prepend(100) # debug=True
 
 `[?]` How does Complexity of the `.delete` method compare with the array in python?  
 `[?]` Given that Python Arrys uses pointers anyway, how large of a space-time complexity difference would you expectin languages like C, Swift or Java which don't do that?  
+
+
+`[ ]` Create a `.exists` method that checks if a node contains a specific `data` value.  
+`[ ]` Create a `.findi` method that returns the index of the node that contains the specificied value in its `data` attribute.  
+`[ ]` Create a `.iget` method that return the node object that sits at a given index.  
+<!-- #endregion -->
