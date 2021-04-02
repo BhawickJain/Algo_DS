@@ -60,9 +60,8 @@ class LinkedList:
         Creates a new node with Data at the tail node
         This new node then becomes the Tail Node
         """
-#         current = self.head
         
-        if current == None:
+        if self.head == None:
             self.head = Node(data)
         else:
             current = self.head
