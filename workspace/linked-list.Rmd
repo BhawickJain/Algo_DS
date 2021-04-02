@@ -41,8 +41,9 @@ class Node:
     def __repr__(self):
 #         return "<Node data: %s %s>" % self.data % self.next_node
         return f"<Node data: {self.data}>"
+```
 
-
+```{python}
 class LinkedList:
     """
     Singly-linked list
@@ -54,6 +55,16 @@ class LinkedList:
     def is_empty(self):
         return self.head == None
     
+    def add(self, data):
+        if self.head == None:
+            self.head = Node(data)
+        else:
+            current = self.head
+            while current.next_node:
+                current = current.next_node
+            
+            current.next_node = Node(data)
+    
     # convenience method
     def size(self):
         """ 
@@ -63,36 +74,42 @@ class LinkedList:
         current = self.head()
         count = 0
         
-        while current: #!= None
+        while current.next_node: #!= None
             count = count + 1
             current = current.next_node
             
         return count
+    
+    def __repr__(self):
+        return (f"<Linked List> {self.head}")
 ```
 
-`[ ]` How do you substitute two variables in a string using `%`? fix `line 14`
+`[ ]` How do you substitute two variables in a string using `%`? fix `line 14`  
+`[ ]` Why does the above code work, inspite not explicit reasoning around pointers?  
 
 ```{python}
 N1 = Node(10)
+# <__main__.Node at 0x7fe89449b760>    # Without __repr__
+# <Node data: 10>                      # With __repr__
 ```
 
 Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `__repr__` to return something sensible and helpful.
 
 ```{python}
-N1
-# <__main__.Node at 0x7fe89449b760>
-```
-
-```{python}
 N2 = Node(20)
-```
-
-```{python}
-N2
-```
-
-```{python}
 N1.next_node = N2
 ```
 
+`[?]` At `line 2`, does the assignment to `next_node` involve passing the pointer to the object or the object itself?  
+`[?]` When does the assignment operator give the object itself and when is the pointer around?
 
+```{python}
+L1 = LinkedList()
+L1.add(10)
+L1.add(20)
+L1.size
+```
+
+```{python}
+
+```
