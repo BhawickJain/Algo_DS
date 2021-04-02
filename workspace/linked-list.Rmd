@@ -70,13 +70,17 @@ class LinkedList:
 
             current.next_node = Node(data)
             
-    def prepend(self, data):
+    def prepend(self, data, debug=False):
         """
         Creates a new head node with the target data
         ans sets the previous head to .next_node to current head
         """
-        self.head.next_node = self.head
-        self.head.data = data
+        previous_head = self.head
+        if debug==True: print(f"previous_head: \t {previous_head}")
+        self.head = Node(data)
+        if debug==True: print(f"new self.head: \t {self.head}")
+        self.head.next_node = previous_head
+        if debug==True: print(f"next_node: \t {self.head.next_node}")
                         
     def __repr__(self):
         return (f"<Linked List> {self.head}")
@@ -140,10 +144,6 @@ L1.append(10)
 L1.append(20)
 ```
 
-```{python}
-L1
-```
-
 You can add loads of items with a range to the linked list! Lets give the .size() method a try.
 
 ```{python}
@@ -170,20 +170,23 @@ Notice how when having brackets at end of `size` tells python it is method not a
 Lets try use the `.to_array` method.
 
 ```{python}
-L1.to_array()
+# L1.to_array()
 # [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ```{python}
 L1.append(100)
+# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
 ```{python}
-L1.to_array()
-```
+L1.prepend(100) # debug=True
 
-```{python}
-L1.prepend(100)
+# previous_head: 	 <Node data: 10>
+# new self.head: 	 <Node data: 100>
+# next_node: 	 <Node data: 10>
+
+# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
 ```{python}
