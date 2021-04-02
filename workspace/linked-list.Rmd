@@ -64,6 +64,9 @@ class LinkedList:
                 current = current.next_node
             
             current.next_node = Node(data)
+                        
+    def __repr__(self):
+    return (f"<Linked List> {self.head}")
     
     # convenience method
     def size(self):
@@ -71,17 +74,25 @@ class LinkedList:
         Returns the number of nodes in teh list
         Takes O(n) time
         """
-        current = self.head()
+        current = self.head
         count = 0
         
-        while current.next_node: #!= None
+        while current: #!= None
             count = count + 1
             current = current.next_node
             
         return count
     
-    def __repr__(self):
-        return (f"<Linked List> {self.head}")
+    # convenience method
+    def to_array(self):
+        current = self.head
+        array = []
+        
+        while current:
+            array.append(current.data)
+            current = current.next_node
+            
+        return array
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 14`  
@@ -93,8 +104,6 @@ N1 = Node(10)
 # <Node data: 10>                      # With __repr__
 ```
 
-Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `__repr__` to return something sensible and helpful.
-
 ```{python}
 N2 = Node(20)
 N1.next_node = N2
@@ -103,13 +112,20 @@ N1.next_node = N2
 `[?]` At `line 2`, does the assignment to `next_node` involve passing the pointer to the object or the object itself?  
 `[?]` When does the assignment operator give the object itself and when is the pointer around?
 
+
+Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `__repr__` to return something sensible and helpful.
+
 ```{python}
 L1 = LinkedList()
 L1.add(10)
 L1.add(20)
-L1.size
+
+for x in range(1,10):
+    L1.add(x)
+
+L1.size()
 ```
 
 ```{python}
-
+L1.to_array()
 ```
