@@ -166,7 +166,16 @@ class LinkedList:
          
         finds = self.findi(data)
         return len(finds) > 0
-            
+    
+    def insert(self, index, data):
+        """
+        Gets node at nth index and prepends that node with node with target data.
+        """
+        before_node = self.iget(index-1)
+        insert_node = Node(data)
+        insert_node.next_node = before_node.next_node
+        before_node.next_node = insert_node
+        
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
@@ -254,10 +263,18 @@ L1.prepend(100) # debug=True
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
-`[ ]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.  
+`[x]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.
+
+```{python}
+L1.insert(4, 10)
+# [100, 10, 20, 1, 10, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+L1.to_array()
+```
+
 `[v]` Modify the `.insert` method so that data is added _after_ a node with a given value.  
 `[v]` Modify the `.insert` method give an option to add _before_ a node with a given value.  
 `[ ]` Reason the Big O values for the `.append`, `.prepend` and `.insert` functions.  
+
 
 `[ ]` Create a `.delete` method to delete at `head`.  <br>
 `[ ]` Create a `.delete` method to delete at `tail`.  <br>
