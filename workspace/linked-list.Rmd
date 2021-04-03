@@ -295,7 +295,7 @@ L1.to_array()
 `[ ]` Reason the Big O values for the `.append`, `.prepend` and `.insert` functions.  
 
 
-`[ ]` Create a `.delete` method to delete at `head`.  <br>
+`[x]` Create a `.delete` method to delete at `head`.  
 
 ```{python}
 L1.idelete(0)
@@ -303,19 +303,19 @@ L1.idelete(0)
 L1.to_array()
 ```
 
-`[ ]` Create a `.delete` method to delete at `tail`.  <br>
+`[x]` Create a `.delete` method to delete at `tail`.  
 
 ```{python}
 L1.idelete(11)
-# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# [10, 20, 1, 10, 2, 3, 4, 5, 6, 7, 8, 100]
 L1.to_array()
 ```
 
-`[ ]` Create a `.delete` method to delete at an index(th) node.  <br> 
+`[x]` Create a `.delete` method to delete at an index(th) node.  
 
 ```{python}
 L1.idelete(4)
-# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+# [10, 20, 1, 10, 3, 4, 5, 6, 7, 8, 100]
 L1.to_array()
 ```
 
@@ -342,8 +342,8 @@ L1.exists(11)
 `[x]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
 
 ```{python}
-L1.findi(100)
-# [0,12]
+L1.findi(10)
+# [0,3]
 ```
 
 ```{python}
@@ -357,7 +357,7 @@ L1.findi(8)
 #  0    1   2   3  4  5  6  7  8  9  10 11 12
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 
-L1.iget(12)
+L1.iget(9)
 #<Node data: 100>
 ```
 
