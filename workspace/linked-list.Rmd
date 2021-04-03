@@ -138,6 +138,27 @@ class LinkedList:
             count += 1
                 
         raise IndexError(f"Index out of Range\n{self}")
+        
+    def findi(self, data):
+        """
+        Take the data specified and find instances.
+        Records their index and returns an array of
+        index values of matching nodes.
+        """
+        
+        current = self.head
+        index = 0
+#         size = self.size()
+        indexes = []
+        
+        while current:
+            if current.data == data:
+                indexes.append(index)
+            index += 1
+            current = current.next_node
+            
+        return indexes
+            
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
@@ -225,7 +246,6 @@ L1.prepend(100) # debug=True
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 ```
 
-<!-- #region -->
 `[ ]` Create an `.insert` method for the `LinkedList` class that takes an index and data to be added.  
 `[v]` Modify the `.insert` method so that data is added _after_ a node with a given value.  
 `[v]` Modify the `.insert` method give an option to add _before_ a node with a given value.  
@@ -240,8 +260,22 @@ L1.prepend(100) # debug=True
 
 
 `[ ]` Create a `.exists` method that checks if a node contains a specific `data` value.  
-`[ ]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
-<!-- #endregion -->
+
+```{python}
+
+```
+
+`[x]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
+
+```{python}
+L1.findi(100)
+# [0,12]
+```
+
+```{python}
+L1.findi(8)
+# [10]
+```
 
 `[x]` Create a `.iget` method that return the node object that sits at a given index.  
 
