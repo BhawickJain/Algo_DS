@@ -184,7 +184,17 @@ class LinkedList:
         index does not exist in linked list.
         """
         
-        
+        if index != 0:
+            before_node = self.iget(index-1)
+            delete_node = before_node.next_node
+            if delete_node.next_node == None:
+                before_node.next_node = None
+            else:
+                after_node = delete_node.next_node
+                before_node.next_node = after_node
+            
+        else:
+            self.head = self.head.next_node
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
@@ -286,16 +296,35 @@ L1.to_array()
 
 
 `[ ]` Create a `.delete` method to delete at `head`.  <br>
+
+```{python}
+L1.idelete(0)
+# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+L1.to_array()
+```
+
 `[ ]` Create a `.delete` method to delete at `tail`.  <br>
+
+```{python}
+L1.idelete(11)
+# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+L1.to_array()
+```
+
 `[ ]` Create a `.delete` method to delete at an index(th) node.  <br> 
+
+```{python}
+L1.idelete(4)
+# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+L1.to_array()
+```
 
 `[?]` How does Complexity of the `.delete` method compare with the array in python?  
 `[?]` Given that Python Arrys uses pointers anyway, how large of a space-time complexity difference would you expectin languages like C, Swift or Java which don't do that?  
 
 ```{python}
-L1.delete(4)
-# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
-L1.to_array()
+# L1.idelete(100)
+# index out of Range error from iget implemented within idelete
 ```
 
 `[x]` Create a `.exists` method that checks if a node contains a specific `data` value.  
