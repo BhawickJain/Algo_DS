@@ -176,6 +176,15 @@ class LinkedList:
         insert_node.next_node = before_node.next_node
         before_node.next_node = insert_node
         
+    def idelete(self, index):
+        """
+        Deletes node that is at ith index.
+        
+        Throws an index out of range error if 
+        index does not exist in linked list.
+        """
+        
+        
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
@@ -283,6 +292,11 @@ L1.to_array()
 `[?]` How does Complexity of the `.delete` method compare with the array in python?  
 `[?]` Given that Python Arrys uses pointers anyway, how large of a space-time complexity difference would you expectin languages like C, Swift or Java which don't do that?  
 
+```{python}
+L1.delete(4)
+# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+L1.to_array()
+```
 
 `[x]` Create a `.exists` method that checks if a node contains a specific `data` value.  
 
