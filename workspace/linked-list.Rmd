@@ -348,32 +348,20 @@ L1.findi(10)
 
 ```{python}
 L1.findi(8)
-# [10]
+# [9]
 ```
 
-`[x]` Create a `.iget` method that return the node object that sits at a given index.  
+`[x]` Create a `.iget` method that returns the node object that sits at a given index.  
 
 ```{python}
-#  0    1   2   3  4  5  6  7  8  9  10 11 12
-# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+#  0   1   2  3   4  5  6  7  8  9  10
+# [10, 20, 1, 10, 3, 4, 5, 6, 7, 8, 100]
 
 L1.iget(9)
-#<Node data: 100>
+#<Node data: 8>
 ```
 
 ```{python}
 # L1.iget(13)
-# ---------------------------------------------------------------------------
-# IndexError                                Traceback (most recent call last)
-# <ipython-input-38-b2c44eefa802> in <module>
-# ----> 1 L1.iget(13)
-
-# <ipython-input-28-8b21c9fa865a> in iget(self, index)
-#      87             count += 1
-#      88 
-# ---> 89         raise IndexError(f"Index out of Range\n{self}")
-
-# IndexError: Index out of Range
-# <Linked List> 	<Node data: 100> 
-# count: 13
+# Index out of Range
 ```
