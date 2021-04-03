@@ -255,7 +255,7 @@ Notice how when having brackets at end of `size` tells python it is method not a
 Lets try use the `.to_array` method.
 
 ```{python}
-# L1.to_array()
+L1.to_array()
 # [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -299,7 +299,7 @@ L1.to_array()
 
 ```{python}
 L1.idelete(0)
-# [10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+# [10, 20, 1, 10, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 L1.to_array()
 ```
 
