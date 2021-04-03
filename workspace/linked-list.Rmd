@@ -158,6 +158,14 @@ class LinkedList:
             current = current.next_node
             
         return indexes
+    
+    def exists(self, data):
+        """
+        Returns true or false if a given value exists in a linked list
+        """
+         
+        finds = self.findi(data)
+        return len(finds) > 0
             
 ```
 
@@ -262,18 +270,24 @@ L1.prepend(100) # debug=True
 `[ ]` Create a `.exists` method that checks if a node contains a specific `data` value.  
 
 ```{python}
+L1.exists(100)
+# True
+```
 
+```{python}
+L1.exists(11)
+# False
 ```
 
 `[x]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
 
 ```{python}
-L1.findi(100)
+# L1.findi(100)
 # [0,12]
 ```
 
 ```{python}
-L1.findi(8)
+# L1.findi(8)
 # [10]
 ```
 
@@ -302,8 +316,4 @@ L1.findi(8)
 # IndexError: Index out of Range
 # <Linked List> 	<Node data: 100> 
 # count: 13
-```
-
-```{python}
-
 ```
