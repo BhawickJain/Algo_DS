@@ -117,6 +117,27 @@ class LinkedList:
             current = current.next_node
             
         return array
+    
+    # convenience method
+    def iget(self, index):
+        """
+        Takes the index number and returns 
+        a node object that sits at that index.
+        
+        Throws an out of range error when index 
+        is larger than the linked list.
+        """
+        current = self.head
+        count = 0
+        size = self.size()
+        while count <= size-1:
+            if count == index:
+                return current
+            elif current.next_node:
+                current = current.next_node
+            count += 1
+                
+        raise IndexError(f"Index out of Range\n{self}")
 ```
 
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
@@ -219,6 +240,36 @@ L1.prepend(100) # debug=True
 
 
 `[ ]` Create a `.exists` method that checks if a node contains a specific `data` value.  
-`[ ]` Create a `.findi` method that returns the index of the node that contains the specificied value in its `data` attribute.  
-`[ ]` Create a `.iget` method that return the node object that sits at a given index.  
+`[ ]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
 <!-- #endregion -->
+
+`[x]` Create a `.iget` method that return the node object that sits at a given index.  
+
+```{python}
+#  0    1   2   3  4  5  6  7  8  9  10 11 12
+# [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+
+# L1.iget(12)
+#<Node data: 100>
+```
+
+```{python}
+# L1.iget(13)
+# ---------------------------------------------------------------------------
+# IndexError                                Traceback (most recent call last)
+# <ipython-input-38-b2c44eefa802> in <module>
+# ----> 1 L1.iget(13)
+
+# <ipython-input-28-8b21c9fa865a> in iget(self, index)
+#      87             count += 1
+#      88 
+# ---> 89         raise IndexError(f"Index out of Range\n{self}")
+
+# IndexError: Index out of Range
+# <Linked List> 	<Node data: 100> 
+# count: 13
+```
+
+```{python}
+
+```
