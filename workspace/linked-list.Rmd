@@ -25,6 +25,9 @@ Sometimes the data structures a programming language provides are too costly fro
 It is a linear data structure where each item is a node which carries a value and a pointer to the next node. The first node of the list is known as the head and the last node as the tail. Most implementations only know the location of the head of the list, some also keep track of the tail. Node are known as self-referential objects as each node points to another node and the definition of the node refers to itself.  
 There are two kinds of linked lists: singly linked list, where each node has one pointer to the next node, and a doubly linked list, where each node has two pointers the extra one referring to the previous node. With a doubly linked list, you can move up and down the linked list, you can't do that with a singly linked list.
 
+
+Define the basic node object:
+
 ```{python}
 class Node:
     """
@@ -42,6 +45,8 @@ class Node:
 #         return "<Node data: %s %s>" % self.data % self.next_node
         return f"<Node data: {self.data}>"
 ```
+
+Define the LinkedList class that uses the node object to create a linked list. Technical after a few essential function much of the functions are there for convenience and become increasingly favourable for specific scenarios instead of anything general. This will be discussed when talking about the Big O of each of the functions.
 
 ```{python}
 class LinkedList:
@@ -148,7 +153,6 @@ class LinkedList:
         
         current = self.head
         index = 0
-#         size = self.size()
         indexes = []
         
         while current:
@@ -197,15 +201,18 @@ class LinkedList:
             self.head = self.head.next_node
 ```
 
-`[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
-`[ ]` Why does the above code work, inspite not explicit reasoning around pointers?
+`[ ]` How do you substitute two variables in a string using `%`? fix `line 42`  
+`[ ]` Why does the above code work, in spite of any explicit reasoning around pointers?  
+`[ ]` This is most evident in `insert` and `idelete` methods. Why should `before_node` assignment change the original linked list? For all I know that I changed another instance of the node in memory, separate from the linked list.
 
 
-__Convenience Method__  
+__Convenience Methods__  
 
 A convenience method is a method are affordances a data structure can provide that do not add functionality to the data structure per se, but instead give methods for the usual thing you would do. This ensures you don't have to recreate a method and assures you can focus on the code that specifically bring the functionality you're concerned with. It allows the author of the data structure to write the most efficient and convenient version.
 
-In the `LinkedList` Class, I have provided `size` and `to_array` methods which one can implement themselves but why make 'em do it is common?
+In the `LinkedList` Class, I have provided `size` and `to_array` methods which one can implement themselves but why make 'em do it is common? That said, the more convenient methods can be considered to be opinionated to specific general scenario.
+
+You need to be aware of how they behave. Specifically from a complexity standpoint, you need to decide if a custom implementation is required or some other library extension.
 
 ```{python}
 N1 = Node(10)
