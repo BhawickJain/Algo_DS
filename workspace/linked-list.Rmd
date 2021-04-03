@@ -200,6 +200,7 @@ class LinkedList:
 `[ ]` How do you substitute two variables in a string using `%`? fix `line 22`  
 `[ ]` Why does the above code work, inspite not explicit reasoning around pointers?
 
+
 __Convenience Method__  
 
 A convenience method is a method are affordances a data structure can provide that do not add functionality to the data structure per se, but instead give methods for the usual thing you would do. This ensures you don't have to recreate a method and assures you can focus on the code that specifically bring the functionality you're concerned with. It allows the author of the data structure to write the most efficient and convenient version.
@@ -212,6 +213,8 @@ N1 = Node(10)
 # <Node data: 10>                      # With __repr__
 ```
 
+Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `__repr__` to return something sensible and helpful.
+
 ```{python}
 N2 = Node(20)
 N1.next_node = N2
@@ -219,9 +222,6 @@ N1.next_node = N2
 
 `[?]` At `line 2`, does the assignment to `next_node` involve passing the pointer to the object or the object itself?  
 `[?]` When does the assignment operator give the object itself and when is the pointer around?
-
-
-Without the `__repr__` dunder you get not-so-human friendly python jargon. Use `__repr__` to return something sensible and helpful.
 
 ```{python}
 L1 = LinkedList()
@@ -235,7 +235,7 @@ You can add loads of items with a range to the linked list! Lets give the .size(
 for x in range(1,10):
     L1.append(x)
 
-# L1.size()
+L1.size()
 # 11
 ```
 
