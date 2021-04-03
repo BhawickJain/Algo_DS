@@ -267,7 +267,7 @@ L1.prepend(100) # debug=True
 `[?]` Given that Python Arrys uses pointers anyway, how large of a space-time complexity difference would you expectin languages like C, Swift or Java which don't do that?  
 
 
-`[ ]` Create a `.exists` method that checks if a node contains a specific `data` value.  
+`[x]` Create a `.exists` method that checks if a node contains a specific `data` value.  
 
 ```{python}
 L1.exists(100)
@@ -282,12 +282,12 @@ L1.exists(11)
 `[x]` Create a `.findi` method that returns the index of the node that contains the specified value in its `data` attribute.  
 
 ```{python}
-# L1.findi(100)
+L1.findi(100)
 # [0,12]
 ```
 
 ```{python}
-# L1.findi(8)
+L1.findi(8)
 # [10]
 ```
 
@@ -297,7 +297,7 @@ L1.exists(11)
 #  0    1   2   3  4  5  6  7  8  9  10 11 12
 # [100, 10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100]
 
-# L1.iget(12)
+L1.iget(12)
 #<Node data: 100>
 ```
 
