@@ -117,3 +117,18 @@ You also have a `.remove(item)` operation which searches and then deletes the it
 numbers.remove(5)
 numbers
 ```
+
+#### Questions
+
+`[?]` Why are Python Arrays called lists?  
+`[?]` What makes Arrays so good for reading items?  
+`[?]` From a Data Structures point of view are Lists, linked lists?  
+`[?]` Is Python's implementation of Arrays pretty much as linked list?  
+`[?]` From a Data Structures Point of View, what operations should an Array offer?  
+`[?]` From a Data Structures Point of View, how are operations of a linked list different from an array?  
+`[?]` What operations does Python offer on its Array implementation?  
+`[?]` Do you know what the Big O is for the Array implementation in Python?  
+`[?]` Why do arrays typically have a fixed length?  
+`[a]` Because, inserting and deleting a items in the array is costly and generally not what arrays are for. They are great for reading.  
+`[?]` What is an ammortised constant complexity?  
+`[?]` Why does the `.append` operation have a ammortized constant space complexity in Python?  
