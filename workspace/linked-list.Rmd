@@ -375,3 +375,5 @@ L1.iget(9)
 # L1.iget(13)
 # Index out of Range
 ```
+
+`[?]` How is Python's implementation of an Array better and worse compared to a standard concept of linked lists?  
