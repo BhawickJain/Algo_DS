@@ -20,6 +20,9 @@ Sometimes the data structures a programming language provides are too costly fro
 
 `[ ]` Find more reasons why building your own data structures can be better
 
+#### An appreciation of data structures underlying existing code bases
+Most of the time you won't have build any data structures. However, the principles that underpin their performance and the affordances they provides need to be understood in practical contexts. By grappling with various Data Structures and Algorithms you can more critical in choosing the right data types, libraries and functions.
+
 #### What is a linked list?
 
 It is a linear data structure where each item is a node which carries a value and a pointer to the next node. The first node of the list is known as the head and the last node as the tail. Most implementations only know the location of the head of the list, some also keep track of the tail. Node are known as self-referential objects as each node points to another node and the definition of the node refers to itself.  
