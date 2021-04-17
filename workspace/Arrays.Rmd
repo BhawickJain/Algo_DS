@@ -137,6 +137,10 @@ numbers
 `[>]` No, Python runs as far as it can from a linked list. Python's array data structure is a proper array which is restriction to its `list` data type. You need to import the `array` module and define the data type to be used at initialisation [[py-doc-arr](https://docs.python.org/3/library/array.html?highlight=array#module-array)]. Generally you just use Lists [[so-arr-str](https://stackoverflow.com/questions/57301478/how-to-create-an-array-of-strings-by-using-array-module)]. [[gh-cpy-listobj](https://github.com/python/cpython/blob/5c22476c01622f11b7745ee693f8b296a9d6a761/Objects/listobject.c#L22)] show what the implementation looks like.
 
 
+`[?]` Why do arrays typically have a fixed length?  
+`[>]` The array sits in an allocated memory space which is defined at construction, it can only hold up to the reserved space. Generally resizing the array is an expensive operation, so generally it is not considered a usecase for arrays.
+
+
 `[?]` From a Data Structures Point of View, what operations should an Array offer?  
 `[?]` From a Data Structures Point of View, how are operations of a linked list different from an array?  
 `[?]` What operations does Python offer on its `Array` implementation?  
