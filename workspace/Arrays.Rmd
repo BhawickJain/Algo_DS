@@ -16,7 +16,7 @@ jupyter:
 ## Arrays
 
 
-In python Arrays are called lists. Arrays are contiguous memory data structure, which means each item is placed next to each other in memory. When accessing the array, an index is used which refers to the target memory as: `index 0 address` + `size of item type` + `index`.  
+In python Arrays are called lists. Arrays are contiguous memory data structure, which means each item is placed next to each other in memory. When accessing the array, an index is used which refers to the target memory as: `index 0 address` $+$ `size of item type` $\times$ `index`.  
 This allows the arrays methods to jump to the target items without having to consider all the items in the array. This leads to the access of items in arrays to be a constant time $O(1)$ operation.  
 
 ```{python}
@@ -120,8 +120,15 @@ numbers
 
 #### Questions
 
-`[?]` Why are Python Arrays called lists?  
+
+`[?]` Why are Python Lists treated as Arrays?  
+`[>]` Python's List implementation is really a [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array) and is unlike the Lisp-style linked list you would initally think [Py-Docs-DH](https://docs.python.org/3/faq/design.html#how-are-lists-implemented-in-cpython). By carrying a continguous list of pointers instead of a linked list means indexing the list is less costly. It common for programming languages to use [associative arrays](https://en.wikipedia.org/wiki/Associative_array) which just arrays that hold a `key,value` pair. They are meant to behave like lists but otherwise remain efficient for practical applications [wiki-arr-imp](https://en.wikipedia.org/wiki/List_(abstract_data_type)#Implementations).
+
+
 `[?]` What makes Arrays so good for reading items?  
+`[>]` Arrays list contiguously (sequentially) in a memory so all you need to know is where the first item of the array first via a `head`, the data type and an index. The data type defines the size of the item and can jump straight to the desired item like so: `item_address` $=$ `head` $+$ `data_type_size` $\times$ `index`.
+
+
 `[?]` From a Data Structures point of view are Lists, linked lists?  
 `[?]` Is Python's implementation of Arrays pretty much as linked list?  
 `[?]` From a Data Structures Point of View, what operations should an Array offer?  
