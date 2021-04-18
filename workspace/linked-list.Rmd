@@ -377,3 +377,52 @@ L1.iget(9)
 ```
 
 `[?]` How is Python's implementation of an Array better and worse compared to a standard concept of linked lists?  
+
+
+### Linked List Implementation 2
+
+```{python}
+class LinkedList2:
+    
+    def __init__(self):
+        self.head = None
+        
+    def __repr__(self):
+        
+        current = self.head
+        arrList = []
+        
+        while current != None:
+            arrList.append(current.data)
+            current = current.next_node
+       
+        arrstring = '] -> ['.join([f'{node}' for node in arrList])
+        return f"<LinkedList2> count:{len(arrList)} \n[{arrstring}]"
+        
+    def add(self,data):
+        
+        if self.head == None:
+            self.head = Node(data)
+        
+        else:
+            
+            current = self.head
+            
+            while current != None:
+                current = current.next_node
+                
+            current = Node(data)
+        
+```
+
+```{python}
+List2 = LinkedList2()
+List2.add(3)
+List2.add(3)
+List2.add(3)
+List2
+```
+
+```{python}
+len([1,2,3])
+```
