@@ -396,7 +396,7 @@ class LinkedList2:
             arrList.append(current.data)
             current = current.next_node
        
-        arrstring = '] -> ['.join([f'{node}' for node in arrList])
+        arrstring = ']->['.join([f'{node}' for node in arrList])
         return f"<LinkedList2> count:{len(arrList)} \n[{arrstring}]"
         
     def add(self,data):
@@ -405,20 +405,22 @@ class LinkedList2:
             self.head = Node(data)
         
         else:
-            
             current = self.head
             
-            while current != None:
+            while current.next_node != None:
                 current = current.next_node
                 
-            current = Node(data)
+            current.next_node = Node(data)
         
 ```
 
 ```{python}
 List2 = LinkedList2()
+```
+
+```{python}
 List2.add(3)
-List2.add(3)
+List2.add(5)
 List2.add(3)
 List2
 ```
