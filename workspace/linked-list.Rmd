@@ -439,7 +439,7 @@ class LinkedList2:
         arrList = []
         
         while current != None:
-            arrList.append(current.data)
+            arrList = arrList.append(current.data)
             current = current.next_node
        
         arrstring = ']->['.join([f'{node}' in node for arrList])
