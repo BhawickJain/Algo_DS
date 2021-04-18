@@ -422,7 +422,3 @@ List2.add(3)
 List2.add(3)
 List2
 ```
-
-```{python}
-len([1,2,3])
-```
