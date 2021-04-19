@@ -15,6 +15,9 @@ jupyter:
 
 Linked List Implementation 2
 
+`[ ]` Why should you declare all the variables of a class outside the init?  
+`[>]` Maybe to declare all variable, even the ones not used at `__init__`.
+
 ```{python}
 class Node:
     """
@@ -22,18 +25,20 @@ class Node:
     Models two attributes - data and the link to the next node in the list
     """
     data = None
-    next_node = None
     
     def __init__(self, data):
         self.data = data
         
         
     def __repr__(self):
+        # repr means representation
         return "<Node data: %s>" % self.data
 ```
 
 ```{python}
 class LinkedList:
+    
+    head = None
     
     def __init__(self):
         self.head = None
@@ -63,4 +68,17 @@ class LinkedList:
                 
             current.next_node = Node(data)
         
+```
+
+```{python}
+N1 = Node(5)
+N1.next_node = Node(6)
+```
+
+```{python}
+N1.next_node
+```
+
+```{python}
+
 ```
