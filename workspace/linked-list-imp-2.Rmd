@@ -13,10 +13,14 @@ jupyter:
     name: python3
 ---
 
-Linked List Implementation 2
+## Linked List Implementation 2
+
 
 `[ ]` Why should you declare all the variables of a class outside the init?  
 `[>]` Maybe to declare all variable, even the ones not used at `__init__`.
+
+
+`[ ]` Is there a way to stop someone from adding additional variables against an instance of a class?
 
 ```{python}
 class Node:
@@ -25,6 +29,7 @@ class Node:
     Models two attributes - data and the link to the next node in the list
     """
     data = None
+    next_node = None
     
     def __init__(self, data):
         self.data = data
@@ -37,48 +42,61 @@ class Node:
 
 ```{python}
 class LinkedList:
-    
-    head = None
+    """
+    Singly linked list
+    """
     
     def __init__(self):
         self.head = None
         
-    def __repr__(self):
+    def is_empty(self):
+        return self.head == None
+    
+    def size(self):
+        """
+        Returns the number of nodes in the list
+        Takes O(n) time
+        """
         
         current = self.head
-        arrList = []
+        count = 0
         
-        while current != None:
-            arrList.append(current.data)
+        while current:
+            count += 1
             current = current.next_node
-       
-        arrstring = ']->['.join([f'{node}' for node in arrList])
-        return f"<LinkedList2> count:{len(arrList)} \n[{arrstring}]"
-        
-    def add(self,data):
-        
-        if self.head == None:
-            self.head = Node(data)
-        
-        else:
-            current = self.head
-            
-            while current.next_node != None:
-                current = current.next_node
+
+        return count
                 
-            current.next_node = Node(data)
+    def add(self,data):
+        """
+        Adds new Node containing data at head of the list
+        Takes O(1) operation
+        """
         
+        new_node = Node(data)
+        new_node.next_node = self.head
+        self.head = new_node
+    
+    def __repr__(self):
+        """
+        Returns a string representation of the list
+        Takes O(n) time
+        """
+        
+        nodes = []
+        current = self.head
+        
+        while current:
+            if current is self.head:
+                nodes.append("[Head: %s]" % current.data)
+            elif current.next_node is None:
+                nodes.append("[Tail: %s]" % current.data)
+            else:
+                nodes.append("[%s]" % current.data)
+            
+            current = current.next_node
+                
+        return '-> '.join(nodes)
 ```
 
-```{python}
-N1 = Node(5)
-N1.next_node = Node(6)
-```
-
-```{python}
-N1.next_node
-```
-
-```{python}
-
-```
+`[ ]` Is there any design advice on building a help `__repr__` function?
