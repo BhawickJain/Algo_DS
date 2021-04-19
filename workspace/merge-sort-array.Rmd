@@ -45,3 +45,27 @@ arr = [2,3,1,66,0,9]
 ```{python}
 merge_sort(arr)
 ```
+
+Compare with the merge sort implementation below and identify everything wrong with it.
+
+```{python}
+# def merge_sort_bad (array):
+
+#     if len(array) == 1:
+#         return array
+
+#     elif len(array) > 1:
+#         midpoint = len(array) // 2
+#         s_1 = merge_sort(array[:midpoint])
+#         s_2 = merge_sort(array[midpoint:])
+#         while len(s2) > 0:
+#             i = s2.pop()
+#             index_j = 0
+#             for j in s1:
+#                 index_j += 1
+#                 if j > i:
+#                     s1.insert(index_j, s2)
+#                 break
+
+#     return s1
+```
