@@ -45,7 +45,3 @@ arr = [2,3,1,66,0,9]
 ```{python}
 merge_sort(arr)
 ```
-
-```{python}
-
-```
