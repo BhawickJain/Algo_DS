@@ -168,3 +168,8 @@ class LinkedList:
 
 `[ ]` Is there any design advice on building a help `__repr__` function?  
 `[ ]` Why should the `__repr__` function should be the last function?
+
+
+`[ ]` When do you use `==` or `is`?  <br>
+`[ ]` Implement remove at index  
+`[ ]` Implement node at index  
