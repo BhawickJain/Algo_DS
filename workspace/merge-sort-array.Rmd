@@ -78,3 +78,6 @@ Compare with the merge sort implementation below and identify everything wrong w
 there is no case for when you are the end of the `s1` array because all values are less than the `i`, leading to missing values.  
 
 `[?]` why would you want to implement a while loop instead of a for loop?  
+
+
+`[?]` what key methods do you need from a data structure to enable easy implementation of merge sort?  
