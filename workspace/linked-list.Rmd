@@ -424,3 +424,7 @@ List2.add(5)
 List2.add(3)
 List2
 ```
+
+`[?]` What methods can a linked list offer?  
+`[?]` What's the Big O(n) of those methods?  
+`[?]` Do programming languages offer a true Linked List implementation?  
