@@ -69,16 +69,12 @@ Compare with the merge sort implementation below and identify everything wrong w
 #     return s1
 ```
 
-`index_j` incrementation should below line 17 as it should only be increment if current value is > or =.
+`index_j` incrementation should below line 17 as it should only be increment if current value is > or =.  
 
+`if j > i:` does account for when `j == i` which is also a case where `i` should be inserted.  
 
-`if j > i:` does account for when `j == i` which is also a case where `i` should be inserted.
+`break` statement should be within `if` statement of line 16  
 
+there is no case for when you are the end of the `s1` array because all values are less than the `i`, leading to missing values.  
 
-`break` statement should be within `if` statement of line 16
-
-
-there is no case for when you are the end of the `s1` array because all values are less than the `i`, leading to missing values.
-
-
-`[?]` why would you want to implement a while loop instead of a for loop?
+`[?]` why would you want to implement a while loop instead of a for loop?  
