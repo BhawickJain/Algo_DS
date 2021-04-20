@@ -109,9 +109,11 @@ def merge_sort2(array):
 
                 if a >= b:
                     B.insert(i,a)
+                    print(B)
                     break
 
                 if i+1 == len(B):
+                    print(B)
                     B.append(a)
                     break
                 
@@ -121,11 +123,17 @@ def merge_sort2(array):
 ```
 
 ```{python}
-arr2 = [6,6,6,6,6,6,9,11]
+arr2 = [10000,6,6,6,6,6,11,6,9]
 merge_sort2(arr2)
 ```
 
+`[?]` What difference does `<=` or `>=` in line 17 make?  
+`[?]` Why shouldn't the `B.append(a)` not be `B.insert(0,a)` for `<=` at line 17?  
+
+
 #### Faster Implementation
+
+Given that the two array that come are already sorted, the array you are sorting into should need to have the index position to reset. That is, for every item `a` added to an index position i to Array `B`, the next `a` should will have an index position of greater than or equal to `i`. This is because the next item in the array will be larger then 
 
 ```{python}
 def merge_sort2(array):
