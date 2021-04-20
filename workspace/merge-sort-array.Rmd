@@ -151,8 +151,8 @@ def merge_sort3(array):
         print(A, B)
 
         for a in A:
-            
-            for j in range(i,len(B)-1):
+            print (a)
+            for j in range(i,len(B)):
                 
                 if a <= B[j]:
                     B.insert(j,a)
@@ -173,10 +173,10 @@ merge_sort3(arr3)
 ```
 
 ```{python}
-p = [x for x in range(4,10)]
-p
+for j in range (1,10):
+    print(j)
 ```
 
 ```{python}
-
+arr3.
 ```
