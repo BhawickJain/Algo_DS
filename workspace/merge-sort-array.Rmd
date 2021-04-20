@@ -156,8 +156,8 @@ def merge_sort3(array):
                     i = j
                     break
 
-                if i+1 == len(B):
-                    B.extend(A[j:])
+                if j+1 == len(B):
+                    B.extend(A[i:])
                     i = j
                     break
 
@@ -178,3 +178,5 @@ merge_sort3(arr4)
 arr5 = [9,9,9,9,9,9,9,9,0]
 merge_sort3(arr5)
 ```
+
+`[?]` Is there a good way to debug a recursive algorithm?
