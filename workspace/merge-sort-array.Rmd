@@ -173,10 +173,5 @@ merge_sort3(arr3)
 ```
 
 ```{python}
-for j in range (1,10):
-    print(j)
-```
 
-```{python}
-arr3.
 ```
