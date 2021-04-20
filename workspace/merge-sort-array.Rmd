@@ -160,7 +160,7 @@ def merge_sort3(array):
                     break
 
                 if i+1 == len(B):
-                    B.append(A[j:])
+                    B.extend(A[j:])
                     i = j
                     break
 
