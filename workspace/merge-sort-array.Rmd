@@ -147,11 +147,8 @@ def merge_sort3(array):
         A = merge_sort3(array[:mid])
         B = merge_sort3(array[mid:])
         i = 0
-        
-        print(A, B)
 
         for a in A:
-            print (a)
             for j in range(i,len(B)):
                 
                 if a <= B[j]:
