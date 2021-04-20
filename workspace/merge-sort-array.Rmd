@@ -180,3 +180,34 @@ merge_sort3(arr5)
 ```
 
 `[?]` Is there a good way to debug a recursive algorithm?
+
+```{python}
+def merge_sort4(array):
+
+    if len(array) == 1:
+        return array
+
+    else:
+
+        mid = len(array) // 2
+        A = merge_sort3(array[:mid])
+        B = merge_sort3(array[mid:])
+        i = 0
+
+        while len(A) > 0:
+            a = A.pop()
+            print(A,a)
+            for j in range(i,len(B)):
+                
+                if a <= B[j]:
+                    B.insert(j,a)
+                    i = j
+                    break
+
+                if i+1 == len(B):
+                    B.extend(A[:])
+                    i = j
+                    break
+
+        return B
+```
