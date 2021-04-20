@@ -125,4 +125,34 @@ arr2 = [6,6,6,6,6,6,9,11]
 merge_sort2(arr2)
 ```
 
+#### Faster Implementation
 
+```{python}
+def merge_sort2(array):
+
+    if len(array) == 1:
+        return array
+
+    else:
+
+        mid = len(array) // 2
+        A = merge_sort2(array[:mid])
+        B = merge_sort2(array[mid:])
+
+        for a in A:
+
+            i = 0
+            for b in B:
+
+                if a >= b:
+                    B.insert(i,a)
+                    break
+
+                if i+1 == len(B):
+                    B.append(a)
+                    break
+                
+                i += 1
+
+        return B
+```
