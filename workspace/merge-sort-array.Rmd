@@ -173,5 +173,11 @@ merge_sort3(arr3)
 ```
 
 ```{python}
+arr4 = [6,1006,9,0,5,1,43,2]
+merge_sort3(arr4)
+```
 
+```{python}
+arr5 = [9,9,9,9,9,9,9,9,0]
+merge_sort3(arr5)
 ```
