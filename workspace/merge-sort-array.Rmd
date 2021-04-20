@@ -136,7 +136,7 @@ merge_sort2(arr2)
 Given that the two array that come are already sorted, the array you are sorting into should need to have the index position to reset. That is, for every item `a` added to an index position i to Array `B`, the next `a` should will have an index position of greater than or equal to `i`. This is because the next item in the array will be larger then 
 
 ```{python}
-def merge_sort2(array):
+def merge_sort3(array):
 
     if len(array) == 1:
         return array
@@ -144,23 +144,39 @@ def merge_sort2(array):
     else:
 
         mid = len(array) // 2
-        A = merge_sort2(array[:mid])
-        B = merge_sort2(array[mid:])
+        A = merge_sort3(array[:mid])
+        B = merge_sort3(array[mid:])
+        i = 0
+        
+        print(A, B)
 
         for a in A:
-
-            i = 0
-            for b in B:
-
-                if a >= b:
-                    B.insert(i,a)
+            
+            for j in range(i,len(B)-1):
+                
+                if a <= B[j]:
+                    B.insert(j,a)
+                    i = j
                     break
 
                 if i+1 == len(B):
-                    B.append(a)
+                    B.append(A[j:])
+                    i = j
                     break
-                
-                i += 1
 
         return B
+```
+
+```{python}
+arr3 = [3,2,1,3,4,7]
+merge_sort3(arr3)
+```
+
+```{python}
+p = [x for x in range(4,10)]
+p
+```
+
+```{python}
+
 ```
