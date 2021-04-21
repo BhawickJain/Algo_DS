@@ -251,3 +251,40 @@ The following merge sort is broken, looking at the code what do you think is wro
 
 #     return B
 ```
+
+__Implementation 5__
+
+`[?]` Is and, if so, why is merge sort considered to be a divide and conquer algorithm?
+
+
+`[?]` What is the sort in place variation of the merge sort algorithm?  
+`[?]` How is different to just returning a new list?  
+`[?]` What are costs and affordances through each one?
+
+```{python}
+def merge_sort5(list):
+    """
+    Sorts a list in ascending order
+    Returns a new sorted list
+    
+    Divide: Find the midpoit of the list and divide into sublists
+    Conquer: Recursively sort the sublists created in previous step
+    Combine: Merge the sorted sublists created in previous step
+    """
+    
+    # base case - stopping condition
+    if len(list) <=1:
+        return list
+    
+    left_half, right_half = split(list)
+    
+    # recursive part of the function
+    left = merge_sort(left_half)
+    right = merge_sort(right_half)
+    
+    return merge(left,right)
+```
+
+```{python}
+
+```
