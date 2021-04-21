@@ -306,6 +306,8 @@ def merge(left,right):
     """
     Merges two lists (arrays), sorting them in the processs
     Returns a new merged list
+    
+    assumes the input two lists are already sorted
     """
     
     l = []
@@ -351,3 +353,9 @@ def verify_sorted(list):
 This function works by taking a list and comparing the first two items, and it makes an end comparison with another call to itself with a list that is one shorter from the head. 
 
 Take a list of `[1,3,6]`, the return will the be this: `1 < 3 and 3 < 6 and True`. The last result comes from the trivial case of a list of only consisting of one item.
+
+
+`[?]` Is the python `and` operator working like an `AndAlso` operator like in .NET languages?
+
+
+`[?]` How do you find the stopping condition of an recursive function?
