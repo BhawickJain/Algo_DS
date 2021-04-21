@@ -285,6 +285,4 @@ def merge_sort5(list):
     return merge(left,right)
 ```
 
-```{python}
-
-```
+It is interesting how the use of a higher order function can simplify and enable easier validation and optimisation. In the previous implementations of the method, 
