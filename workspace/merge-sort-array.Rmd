@@ -128,6 +128,12 @@ merge_sort2(arr2)
 ```
 
 `[?]` What difference does `<=` or `>=` in line 17 make?  
+`[>]` `a >= b` is true when the current item in array `A` is greater than or equal to `b`. If not, `b` is larger and the next items in array `B` is considered. This is repeated until one with such a condition is found. When that happens, `a` is placed to the left of `b` as defined by `help(B.insert)`. This means, that when `>=` is defined, the sort will be of descending order (from left to right), vice versa.
+
+
+`[?]` What doesn't `==` need to be changed at line 22?
+
+
 `[?]` Why shouldn't the `B.append(a)` not be `B.insert(0,a)` for `<=` at line 17?  
 
 
@@ -210,4 +216,35 @@ def merge_sort4(array):
                     break
 
         return B
+```
+
+The following merge sort is broken, looking at the code what do you think is wrong with it?
+
+```{python}
+# def merge_sort(array):
+  
+#     if len(array) == 1:
+#         return array
+
+#     else:
+
+#         mid = len(array) // 2
+#         A = merge_sort(array[:mid])
+#         B = merge_sort(array[mid:])
+
+#         for a in A:
+
+#             i = 0
+#             for b in B:
+
+#                 if a <= b:
+#                     B.insert(i,a)
+#                     break
+
+#                 if i+1 == len(B):
+#                     B.append(i,a)
+#                     break
+
+
+#     return B
 ```
