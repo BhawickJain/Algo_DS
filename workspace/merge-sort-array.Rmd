@@ -285,4 +285,18 @@ def merge_sort5(list):
     return merge(left,right)
 ```
 
-It is interesting how the use of a higher order function can simplify and enable easier validation and optimisation. In the previous implementations of the method, 
+It is interesting how the use of a higher order function can simplify and enable easier validation and optimisation. It is also easier to see the overall concept of merge sort whilst abstracting away what doesn't belong and can be optimised away.
+
+```{python}
+def split(list):
+    """
+    Divide the unsorted list at midpoint into sublists
+    Returns two sublists - left and right
+    """
+    
+    mid = len(list)//2
+    left = list[:mid]  # start to up to but not including mid
+    right = list[mid:] # len(list) = len(list[:mid]) + len(list[mid:])
+    
+    return left, right
+```
