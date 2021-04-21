@@ -131,6 +131,9 @@ merge_sort2(arr2)
 `[>]` `a >= b` is true when the current item in array `A` is greater than or equal to `b`. If not, `b` is larger and the next items in array `B` is considered. This is repeated until one with such a condition is found. When that happens, `a` is placed to the left of `b` as defined by `help(B.insert)`. This means, that when `>=` is defined, the sort will be of descending order (from left to right), vice versa.
 
 
+`[?]` Is there a difference in computation when using `<=` or `>=` generally or in specific cases?
+
+
 `[?]` What doesn't `==` need to be changed at line 22?
 
 
