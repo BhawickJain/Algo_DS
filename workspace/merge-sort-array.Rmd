@@ -300,3 +300,32 @@ def split(list):
     
     return left, right
 ```
+
+```{python}
+def merge(list):
+    """
+    Merges two lists (arrays), sorting them in the processs
+    Returns a new merged list
+    """
+    
+    l = []
+    i = 0
+    j = 0
+    
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            l.append(left[i])
+            i += 1
+            
+        else:
+            l.append(right[j])
+            j+1
+            
+    while i < len(left):
+        l.append(left[i])
+        i += 1
+        
+    while j < len(left):
+        l.append(right)
+        j += 1
+```
