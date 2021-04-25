@@ -19,4 +19,4 @@ A repo for my own Algorithm and Data Structures learning and code. It includes p
 `[?]` Why does Python call Arrays as Lists?  
 
 ## References
-[[Tre21] — Algorithms and Data Structures from TreeHouse (free code camp)(https://www.youtube.com/watch?v=8hly31xKli0)]
+[[Tre21](https://www.youtube.com/watch?v=8hly31xKli0)] — Algorithms and Data Structures from TreeHouse (FreeCodeCamp)
