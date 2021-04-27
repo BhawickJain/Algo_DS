@@ -156,7 +156,8 @@ The caveat however is that this depends on the language as it may provide afford
 
 __TODO-extension__  
 `[ ]` You forgot to return recursive statements, raise an issue and then fix it.  
-`[ ]` Try out a list of strings instead?  
+
+
 `[ ]` Can it work with lists of different types?  
 `[ ]` Can you write a generic for binary search?  
 `[ ]` Use gh issues to track gotcha's.  
@@ -200,3 +201,23 @@ rec3_bin_search(a, 2)
 
 `[?]` Explain how `rec3_bin_search` and `rec2_bin_search` are different and why? Are they really equivalent?  
 `[?]` Most of these Binary Search recursive algorithm don't know the position of the found value in relation to the original array. Can you modify any of the recursive binary search algorithms to track that?
+
+
+`[x]` Try out a list of strings instead?  
+`[>]` List of strings can be compared and Python weighs them through [lexographical ordering]
+
+```{python}
+'a' < 'b'
+```
+
+```{python}
+'jake' < 'fara'
+```
+
+This means strings can be sent into these functions as though they are numbers.
+
+```{python}
+b = ['a', 'b','c', 'd']
+
+rec3_bin_search(b, 'b')
+```
