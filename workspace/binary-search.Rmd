@@ -164,3 +164,39 @@ __TODO-extension__
 `[ ]` Find out if C++ and JavaScript have any recursion limits.  
 `[ ]` Find out what tail optimisation is and its use in various languages.  
 `[ ]` Find out a way to measure the time and space taken by an algorithm.
+
+```{python}
+def rec3_bin_search(list, value):
+    
+    mid = (len(list) -1) // 2
+    print(len(list))
+    
+    if len(list) - 1 == 0:
+        return False
+
+    elif list[mid] == value:
+        return True
+
+    elif list[mid] > value:
+        L = list[:mid]
+        return rec3_bin_search(L, value)
+
+    elif list[mid] < value:
+        R = list[mid + 1:]
+        return rec3_bin_search(R, value)
+
+    return False
+```
+
+```{python}
+a = [1, 3, 5]
+
+rec3_bin_search(a, 2)
+```
+
+```{python}
+(len(a) - 1) // 2
+```
+
+`[?]` Explain how `rec3_bin_search` and `rec2_bin_search` are different and why? Are they really equivalent?  
+`[?]` Most of these Binary Search recursive algorithm don't know the position of the found value in relation to the original array. Can you modify any of the recursive binary search algorithms to track that?
