@@ -204,7 +204,7 @@ rec3_bin_search(a, 2)
 
 
 `[x]` Try out a list of strings instead?  
-`[>]` List of strings can be compared and Python weighs them through [lexographical ordering]
+`[>]` List of strings can be compared and Python weighs them through [lexographical ordering](https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types).
 
 ```{python}
 'a' < 'b'
@@ -221,3 +221,5 @@ b = ['a', 'b','c', 'd']
 
 rec3_bin_search(b, 'b')
 ```
+
+`[?]` Is this is normal in programming languages? What would it take to do perform a binary serach on strings for C++ or Javascript?
