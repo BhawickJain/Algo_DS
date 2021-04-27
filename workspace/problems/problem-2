@@ -1,0 +1,21 @@
+# This implementation of Binary Search is faulty. Identify the faults:
+
+a = [1, 3, 5]
+
+def binary_search(list, value):
+    
+    mid = a // 2
+
+    if a[mid] = value:
+        return true
+
+    elif a[mid] > value:
+        L = a[:mid]
+        return binary_search(L)
+
+    elif a[mid] < value:
+        R = a[mid + 1:]
+        return binary_search(R)
+
+    return false
+
